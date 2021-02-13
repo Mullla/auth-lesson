@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1 class="greet">Привет, <span class="name">аноним</span></h1>
+
+    <div class="sign">
+        <button class="sign-in" type="button">Авторизоваться</button>
+        <button class="sign-up" type="button">Зарегистрироваться</button>
+    </div>
+
+    <ul class="users-list">
+    </ul>
+
+    <template id="template">
+        <li class="user">
+            <div class="register-info">
+                <div class="username"></div>
+                <div class="register">Зарегестрирован: <span class="register-time"></span></div>
+            </div>
+            <button class="delete-btn" type="button">Удалить</button>
+        </li>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>

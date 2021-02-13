@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: snow;
+    font-size: 18px;
+    color: darkslategrey;
+}
+
+.greet{
+    margin: 20px;
+    color: slategray;
+}
+
+.name{
+    color: skyblue;
+}
+
+.sign{
+    margin: 20px;
+}
+
+.sign-in{
+    padding: 10px;
+    background-color: forestgreen;
+    color: snow;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    align-self: center;
+}
+
+.sign-in:hover{
+    background-color: limegreen;
+}
+
+.sign-in:active{
+    background-color: darkgreen;
+}
+
+.sign-up{
+    padding: 10px;
+    background-color: royalblue;
+    color: snow;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    align-self: center;
+}
+
+.sign-up:hover{
+    background-color: dodgerblue;
+}
+
+.sign-up:active{
+    background-color: navy;
+}
+
+.users-list{
+    margin: 20px;
+    list-style: none;
+}
+
+.user{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid lightgrey;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+.username{
+    margin: 5px 0;
+}
+
+.register{
+    color: lightsteelblue;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.register-time{
+    color: darkslategrey;
+    font-size: 18px;
+}
+
+.delete-btn{
+    padding: 10px;
+    background-color: crimson;
+    color: snow;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    align-self: center;
+}
+
+.delete-btn:hover{
+    background-color: indianred;
+}
+
+.delete-btn:active{
+    background-color: firebrick;
+}
