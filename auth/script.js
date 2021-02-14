@@ -9,8 +9,8 @@ const loginName = document.querySelector('.name'),
 
 let usersData = [];
 
-if (localStorage.getItem('users' !== null)) {
-    let data = localStorage.getItem('users', 'jsonUsers');
+if (localStorage.getItem('users') !== null) {
+    let data = localStorage.getItem('users');
     usersData = JSON.parse(data);
 } else {
     usersData = [
@@ -22,8 +22,6 @@ if (localStorage.getItem('users' !== null)) {
         }
     ];
 }
-// let data = localStorage.getItem('users', 'jsonUsers');
-//     usersData = JSON.parse(data);
 
 function render() {
     usersList.textContent = '';
@@ -44,21 +42,25 @@ function render() {
                 render();
             });
 
+            let jsonUsers = JSON.stringify(usersData);
+            localStorage.setItem('users', jsonUsers);
     });
 
-    let jsonUsers = JSON.stringify(usersData);
-    localStorage.setItem('users', jsonUsers);
+
 }
 
 // добавление юзера
 function addUser() {
-    let name = prompt('Введите имя и фамилию через пробел'); // строка
+    let name = prompt('Введите имя и фамилию через пробел').trim(); // строка
 
     while (name.match(/[A-zА-я]+/g).length !== 2) {
-        name = prompt('Введите Имя и Фамилия через пробел');
+        name = prompt('Введите Имя и Фамилия через пробел').trim();
     }
+    name = name.replace(/\s{2,}/g, ' ');
 
-    let arrName = name.split(' '); // строка разбивается по пробелу и записывается в массив
+   let arrName = name.split(' '); // строка разбивается по пробелу и записывается в массив
+
+    console.log(arrName);
 
     let date = new Date();
     const dateOptions = {
@@ -78,8 +80,8 @@ function addUser() {
         regDate: date.toLocaleString('ru', dateOptions)
     }
 
-        usersData.push(newUser); // добавление нового пользователя в массив
-        render(); // переотрисовка списка юзеров
+    usersData.push(newUser); // добавление нового пользователя в массив
+    render(); // переотрисовка списка юзеров
 }
 
 function addLogin() {
