@@ -52,8 +52,13 @@ function render() {
 
 // добавление юзера
 function addUser() {
-    const name = prompt('Введите имя и фамилию через пробел'), // строка
-        arrName = name.split(' '); // строка разбивается по пробелу и записывается в массив
+    let name = prompt('Введите имя и фамилию через пробел'); // строка
+
+    while (name.match(/[A-zА-я]+/g).length !== 2) {
+        name = prompt('Введите Имя и Фамилия через пробел');
+    }
+
+    let arrName = name.split(' '); // строка разбивается по пробелу и записывается в массив
 
     let date = new Date();
     const dateOptions = {
